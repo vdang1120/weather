@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} Weather</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+    <link rel="stylesheet" href="../static/styles/style.css">
 </head>
+
 <body>
-    <h1>{{ title }} Weather</h1>
-    <p>{{ status }} and {{ temp }}&deg;</p>
-    <p>Feels like {{ feels_like }}&deg;</p>
     <form action="/weather">
-        <input type="text" name="city" id="city" placeholder="Enter City">
+        <input type="text" name="city" id="city" placeholder="Enter a City">
         <button type="submit">Get Weather</button>
     </form>
+    <div id="weatherBox">
+        <h1>{{ title }} Weather</h1>
+        <div id="weatherBoxTop">
+            <div id="tempBox">
+                <p id="temperature">{{ temp }}&deg;F</p>
+                <p>Feels like {{ feels_like }}&deg;F</p>
+            </div>
+            <div id="statusBox">
+                <div id="iconContainer">
+                    <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="{{ status }}">
+                </div>
+                <p id="status">{{ status }}</p>
+            </div>
+        </div>
+        <div id="min-max">
+            <p id="h">H: {{ h }}&deg;F</p>
+            <p id="l">L: {{ l }}&deg;F</p>
+        </div>
+        <div id="statsBox">
+            <div class="statsSub" id="windBox">
+                <img src="https://img.icons8.com/pastel-glyph/64/add8e6/wind--v1.png">
+                <div class="subBoxStats">
+                    <p>{{ wind }} mph</p>
+                    <p class="sub">{{ windkph }} km/h</p>
+                </div>
+            </div>
+            <div class="statsSub" id="precipBox">
+                <img src="https://img.icons8.com/ios-filled/50/add8e6/water.png">
+                <div class="subBoxStats">
+                    <p>{{ precip }}"</p>
+                    <p class="sub">{{ precipcm }} cm, within past hour</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
