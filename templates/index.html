@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather :O</title>
+    <title>Weather :D</title>
     <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
 </head>
+
 <body>
-    <h1>TODAY'S WEATHER :D</h1>
     <form action="/weather">
         <input type="text" name="city" id="city" placeholder="Enter a City">
         <button type="submit">Get Weather</button>
     </form>
+    <div id="weatherBox">
+        <div id="title">
+            <h1>vdang's Weather App!</h1>
+            <h3>Thank you for visiting :&#41;</h3>
+        </div>
+        <div id="instructions">
+            <h4>⬆️</h4>
+            <h4>Search for your city in the searchbar above to get started!</h4>
+            <h4>⬆️</h4>
+        </div>
+        <p id="credit">Built By:
+            <a href="https://vincentdang.com/">Vincent Dang</a>
+            💫
+        </p>
+    </div>
 </body>
+
 </html>

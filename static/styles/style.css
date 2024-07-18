@@ -5,12 +5,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: black;
+    color: white;
 }
 
 body {
     padding: 2rem;
-    background-color: lightgray;
+    background: url(./background.png);
+    background-repeat: no-repeat;
+    background-size: auto;
     color: whitesmoke;
     display: flex;
     flex-direction: column;
@@ -19,37 +21,70 @@ body {
     font-size: 2rem;
 }
 
+#title {
+    text-align: center;
+}
+
+#credit {
+    font-size: 24px;
+    text-align: center;
+}
+
+#instructions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    max-width: 700px;
+    gap: 10px;
+}
+
 input, button {
+    color: black;
     font-size: 2rem;
     padding: 5px 12px;
-    background-color: transparent;
+    background-color: white;
     border-radius: 0px;
     border: 3px solid gray;
     border-radius: 10px;
-    transition: .1s;
 }
 
+input {
+    flex: 1;
+    min-width: 0;
+}
+
+
 button {
-    background-color: lightblue;
+    background-color: skyblue;
     color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: skyblue;
 }
 
 input::placeholder {
     color: gray;
-    transition: .1s;
+    transition: .2s;
 }
 
 input:focus {
-    border: 3px solid black;
     outline: none;
 }
 
 input:focus::placeholder {
-    color: black;
+    color: white;
 }
 
 #weatherBox {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -83,10 +118,11 @@ input:focus::placeholder {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #add8e6;
+    background-color: skyblue;
     border-radius: 50px;
-    height: 250px;
-    width: 250px;
+    border: solid gray;
+    min-height: 250px;
+    min-width: 250px;
 }
 
 #status {
@@ -114,5 +150,75 @@ input:focus::placeholder {
 
 .sub {
     font-size: 21px;
-    color: rgb(64, 64, 64);
+    color: rgb(200, 200, 200);
+}
+
+@media (max-width: 700px) {
+    #weatherBox {
+        padding: 50px;
+    }
+    #statusBox {
+        min-width: 200px;
+        min-height: 200px;
+    }
+    #iconContainer img {
+        width: 170px;
+        height: 170px;
+    }
+    #status {
+        font-size: 20px;
+        top: -40px;
+    }
+    h1 {
+        font-size: 42px;
+    }
+    h3 {
+        font-size: 32px;
+    }
+    h4 {
+        font-size: 24px;
+    }
+    #temperature {
+        font-size: 60px;
+    }
+    p {
+        font-size: 24px;
+    }
+    .sub {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 605px) {
+    form {
+        flex-direction: column;
+        max-width: 250px;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h3 {
+        font-size: 24px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    #temperature {
+        font-size: 40px;
+    }
+    #statusBox {
+        min-width: 160px;
+        min-height: 160px;
+    }
+    #iconContainer img {
+        width: 130px;
+        height: 130px;
+    }
+    #status {
+        font-size: 16px;
+        top: -30px;
+    }
 }
